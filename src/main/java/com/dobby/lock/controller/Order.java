@@ -45,7 +45,6 @@ public class Order {
 		IntStream.range(0, 100000).parallel().forEach(b -> {
 			users.add("Dobby_" + b);
 		});
-
 		// 初始化库存
 		nKuCun = 10;
 		//模拟开抢
