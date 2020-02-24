@@ -5,6 +5,7 @@
 package com.dobby.lock.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
@@ -41,7 +42,7 @@ public class Order {
 		// 抢到商品的用户
 		List<String> shopUsers = new ArrayList<String>();
 		// 构造很多用户
-		List<String> users = new ArrayList<>();
+		List<String> users = Collections.synchronizedList(new ArrayList<>());
 		IntStream.range(0, 100000).parallel().forEach(b -> {
 			users.add("Dobby_" + b);
 		});
